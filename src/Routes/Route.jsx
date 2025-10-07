@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import App from "../App";
 import ErrorPage from "../Pages/ErrorPage";
 import HomePage from "../Pages/Home";
+import axios from "axios";
+import AllAppsPage from "../Pages/AllApps";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +13,22 @@ export const router = createBrowserRouter([
     children:[
         {
             index:true,
+            loader: () => axios('/appData.json'),
             Component: HomePage
+        },
+        {
+            path: '/allapps',
+            loader: () => axios('/appData.json'),
+            Component: AllAppsPage
+        },
+        {
+            path: '/installedlist',
+            loader: () => axios('/appData.json'),
+            Component: AllAppsPage
+        },
+        {
+            path: '*',
+            Component: ErrorPage
         }
     ]
   },

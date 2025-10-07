@@ -2,8 +2,8 @@ import notFound from '../assets/error-404.png'
 
 export default function ErrorPage () {
     return (
-        <main className='flex flex-col items-center justify-center gap-2 min-h-screen'>
-        <img src={notFound} alt="not found" />
+        <main className='flex flex-col items-center justify-center gap-2 min-h-[70vh]'>
+        <img src={notFound} alt="not found" className='h-[50vh] w-auto' />
         <p>Page not found! Try again or reload the page</p>
         </main>
     )
