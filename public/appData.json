@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=800",
+    "title": "Spotify",
+    "companyName": "Spotify AB",
+    "description": "Spotify is a world-leading music streaming platform that lets users listen to millions of songs, albums, and podcasts from around the globe. You can create playlists, share music with friends, and enjoy curated mixes that evolve with your taste. Whether you’re online or offline, Spotify ensures music follows you everywhere seamlessly.",
+    "size": 185,
+    "reviews": 10800000,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 450000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 1800000 },
+      { "name": "5 star", "count": 7800000 }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1611162616305-7dc88aa4d189?w=800",
+    "title": "Instagram",
+    "companyName": "Meta Platforms, Inc.",
+    "description": "Instagram is a global platform for sharing photos, videos, and stories that connect people worldwide. From everyday life moments to creative reels, users can express themselves freely and connect with like-minded communities. Its algorithmic feed ensures your favorite content is always front and center.",
+    "size": 220,
+    "reviews": 120000000,
+    "ratingAvg": 4.6,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 4000000 },
+      { "name": "2 star", "count": 8000000 },
+      { "name": "3 star", "count": 12000000 },
+      { "name": "4 star", "count": 30000000 },
+      { "name": "5 star", "count": 66000000 }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=800",
+    "title": "WhatsApp Messenger",
+    "companyName": "WhatsApp LLC",
+    "description": "WhatsApp Messenger keeps the world connected with fast, secure messaging and crystal-clear calls. It’s trusted for its end-to-end encryption, ensuring private communication across countries and devices. Users can share images, videos, documents, and even live locations effortlessly with loved ones.",
+    "size": 150,
+    "reviews": 174000000,
+    "ratingAvg": 4.5,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 7000000 },
+      { "name": "2 star", "count": 10000000 },
+      { "name": "3 star", "count": 16000000 },
+      { "name": "4 star", "count": 39000000 },
+      { "name": "5 star", "count": 104000000 }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1625314897518-0f3a4d1a6b7b?w=800",
+    "title": "YouTube",
+    "companyName": "Google LLC",
+    "description": "YouTube is the ultimate hub for video content, where creators and viewers meet. From how-to guides to entertainment, YouTube’s vast library offers something for everyone. With personalized recommendations and offline viewing, it provides an unmatched video experience for users worldwide.",
+    "size": 210,
+    "reviews": 139000000,
+    "ratingAvg": 4.8,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 4000000 },
+      { "name": "2 star", "count": 8000000 },
+      { "name": "3 star", "count": 15000000 },
+      { "name": "4 star", "count": 30000000 },
+      { "name": "5 star", "count": 82000000 }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1551817958-20204d6ab7b2?w=800",
+    "title": "Netflix",
+    "companyName": "Netflix, Inc.",
+    "description": "Netflix delivers award-winning movies, TV shows, documentaries, and original content at your fingertips. Its advanced algorithm curates recommendations based on your watch history and preferences. With offline mode and 4K streaming, Netflix brings cinematic entertainment directly to your home or mobile screen.",
+    "size": 240,
+    "reviews": 11000000,
+    "ratingAvg": 4.5,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 1300000 },
+      { "name": "4 star", "count": 2600000 },
+      { "name": "5 star", "count": 7200000 }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "https://images.unsplash.com/photo-1587574293340-e0011c4eac7b?w=800",
+    "title": "Facebook",
+    "companyName": "Meta Platforms, Inc.",
+    "description": "Facebook allows billions of users to stay connected, share updates, and build communities online. Its combination of news feed, marketplace, and live features makes it a social hub for every generation. Businesses and creators also rely on Facebook for marketing, networking, and growth opportunities.",
+    "size": 260,
+    "reviews": 220000000,
+    "ratingAvg": 4.3,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 10000000 },
+      { "name": "2 star", "count": 13000000 },
+      { "name": "3 star", "count": 20000000 },
+      { "name": "4 star", "count": 40000000 },
+      { "name": "5 star", "count": 137000000 }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "https://images.unsplash.com/photo-1622202226445-9b85f1d1b56c?w=800",
+    "title": "X (Twitter)",
+    "companyName": "X Corp.",
+    "description": "X, formerly known as Twitter, is where the world’s conversations unfold in real time. From breaking news to viral memes, users share and discover what’s happening instantly. It’s the go-to platform for thought leaders, journalists, and communities to engage and express freely.",
+    "size": 180,
+    "reviews": 34000000,
+    "ratingAvg": 4.2,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 4000000 },
+      { "name": "2 star", "count": 5000000 },
+      { "name": "3 star", "count": 6000000 },
+      { "name": "4 star", "count": 8000000 },
+      { "name": "5 star", "count": 9000000 }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "https://images.unsplash.com/photo-1624996379671-bfd3c3c17a5d?w=800",
+    "title": "Snapchat",
+    "companyName": "Snap Inc.",
+    "description": "Snapchat lets users communicate through fun, fleeting snaps, creating an authentic and spontaneous social experience. With augmented reality lenses, Bitmojis, and chat streaks, it keeps friendships interactive and fresh. Its privacy-first design ensures conversations disappear, making sharing effortless and safe.",
+    "size": 190,
+    "reviews": 32000000,
+    "ratingAvg": 4.4,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 3000000 },
+      { "name": "2 star", "count": 4000000 },
+      { "name": "3 star", "count": 5000000 },
+      { "name": "4 star", "count": 8000000 },
+      { "name": "5 star", "count": 12000000 }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "https://images.unsplash.com/photo-1632479692320-97e8a03e5d7a?w=800",
+    "title": "Google Maps",
+    "companyName": "Google LLC",
+    "description": "Google Maps provides real-time navigation, traffic data, and route optimization for millions of drivers, travelers, and explorers. You can discover restaurants, landmarks, and businesses nearby with ease. Its street view and offline map features make it a reliable companion anywhere you go.",
+    "size": 170,
+    "reviews": 62000000,
+    "ratingAvg": 4.8,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 2000000 },
+      { "name": "2 star", "count": 3000000 },
+      { "name": "3 star", "count": 4000000 },
+      { "name": "4 star", "count": 10000000 },
+      { "name": "5 star", "count": 43000000 }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800",
+    "title": "Telegram",
+    "companyName": "Telegram FZ-LLC",
+    "description": "Telegram is a fast, secure, and versatile messaging platform designed for large-scale communication. With cloud synchronization, channels, bots, and customizable themes, it empowers both individuals and communities. Its privacy-focused architecture attracts millions seeking safe and ad-free messaging experiences.",
+    "size": 165,
+    "reviews": 8800000,
+    "ratingAvg": 4.6,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 400000 },
+      { "name": "3 star", "count": 800000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 5300000 }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800",
+    "title": "TikTok",
+    "companyName": "ByteDance Ltd.",
+    "description": "TikTok revolutionized entertainment by allowing anyone to create and share short, engaging videos. Its algorithm curates personalized feeds that keep users hooked for hours. From comedy and dance to education and lifestyle, TikTok celebrates creativity and community expression in every form.",
+    "size": 210,
+    "reviews": 99000000,
+    "ratingAvg": 4.5,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 6000000 },
+      { "name": "2 star", "count": 7000000 },
+      { "name": "3 star", "count": 12000000 },
+      { "name": "4 star", "count": 20000000 },
+      { "name": "5 star", "count": 54000000 }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6b9a7c84?w=800",
+    "title": "Pinterest",
+    "companyName": "Pinterest, Inc.",
+    "description": "Pinterest is a visual discovery engine that helps users find ideas and inspiration for every interest. Whether planning a home makeover or exploring fashion trends, Pinterest provides endless creativity. Users can save, organize, and share pins that reflect their personal style and goals.",
+    "size": 160,
+    "reviews": 8500000,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 200000 },
+      { "name": "2 star", "count": 300000 },
+      { "name": "3 star", "count": 700000 },
+      { "name": "4 star", "count": 1500000 },
+      { "name": "5 star", "count": 5800000 }
+    ]
+  },
+  {
+    "id": 13,
+    "image": "https://images.unsplash.com/photo-1622675274940-df9e6ff42b14?w=800",
+    "title": "Uber",
+    "companyName": "Uber Technologies, Inc.",
+    "description": "Uber redefined modern transportation by connecting riders with drivers in minutes. The app offers safe, reliable, and cashless rides with transparent pricing. It’s available in hundreds of cities worldwide and continues to expand its services with delivery and rental options.",
+    "size": 190,
+    "reviews": 11000000,
+    "ratingAvg": 4.4,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 2500000 },
+      { "name": "5 star", "count": 6300000 }
+    ]
+  },
+  {
+    "id": 14,
+    "image": "https://images.unsplash.com/photo-1590402494682-cd3fb53b1f85?w=800",
+    "title": "Discord",
+    "companyName": "Discord Inc.",
+    "description": "Discord is the ultimate app for gamers and communities to connect through text, voice, and video. It offers custom servers, bots, and roles, creating flexible spaces for collaboration. From gaming groups to study communities, Discord empowers people to stay connected in real time.",
+    "size": 210,
+    "reviews": 17000000,
+    "ratingAvg": 4.6,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 600000 },
+      { "name": "2 star", "count": 900000 },
+      { "name": "3 star", "count": 1300000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 10400000 }
+    ]
+  },
+  {
+    "id": 15,
+    "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800",
+    "title": "Gmail",
+    "companyName": "Google LLC",
+    "description": "Gmail offers secure, smart, and efficient email management powered by Google. Its intuitive interface helps organize mail with labels, filters, and AI-driven priority sorting. With integration across Google Workspace, Gmail keeps personal and professional communication seamless.",
+    "size": 180,
+    "reviews": 52000000,
+    "ratingAvg": 4.8,
+    "downloads": 10000000000,
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 1500000 },
+      { "name": "3 star", "count": 3000000 },
+      { "name": "4 star", "count": 8000000 },
+      { "name": "5 star", "count": 39000000 }
+    ]
+  },
+  {
+    "id": 16,
+    "image": "https://images.unsplash.com/photo-1603791452906-b6c2f19d0b84?w=800",
+    "title": "LinkedIn",
+    "companyName": "Microsoft Corporation",
+    "description": "LinkedIn is the leading professional networking platform for career growth and business opportunities. Users can connect with peers, apply for jobs, and showcase their professional portfolios. Its learning platform and insights make it an essential tool for professionals worldwide.",
+    "size": 170,
+    "reviews": 9300000,
+    "ratingAvg": 4.4,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 5600000 }
+    ]
+  },
+  {
+    "id": 17,
+    "image": "https://images.unsplash.com/photo-1598514982586-3b0b5d2f85a3?w=800",
+    "title": "Amazon Shopping",
+    "companyName": "Amazon Mobile LLC",
+    "description": "Amazon Shopping gives users access to millions of products, from electronics to groceries, delivered right to their doorstep. With fast delivery, secure payments, and personalized recommendations, it makes shopping effortless. Prime members enjoy exclusive deals and ultra-fast delivery options.",
+    "size": 220,
+    "reviews": 70000000,
+    "ratingAvg": 4.7,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 2000000 },
+      { "name": "2 star", "count": 3000000 },
+      { "name": "3 star", "count": 4000000 },
+      { "name": "4 star", "count": 9000000 },
+      { "name": "5 star", "count": 52000000 }
+    ]
+  },
+  {
+    "id": 18,
+    "image": "https://images.unsplash.com/photo-1616338807763-1cde3d2febb4?w=800",
+    "title": "Zoom",
+    "companyName": "Zoom Video Communications, Inc.",
+    "description": "Zoom makes video conferencing and collaboration simple for businesses, educators, and individuals. It offers reliable video, chat, and screen sharing features across multiple devices. With breakout rooms and webinar tools, it’s a powerful platform for communication in the digital age.",
+    "size": 160,
+    "reviews": 30000000,
+    "ratingAvg": 4.6,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 2000000 },
+      { "name": "3 star", "count": 3000000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 17000000 }
+    ]
+  },
+  {
+    "id": 19,
+    "image": "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=800",
+    "title": "Spotify for Artists",
+    "companyName": "Spotify AB",
+    "description": "Spotify for Artists helps musicians track performance, manage releases, and connect with their audience. With real-time streaming data and analytics, artists can understand who’s listening and where. It also allows easy profile customization, playlist pitching, and fan engagement.",
+    "size": 140,
+    "reviews": 250000,
+    "ratingAvg": 4.5,
+    "downloads": 10000000,
+    "ratings": [
+      { "name": "1 star", "count": 10000 },
+      { "name": "2 star", "count": 15000 },
+      { "name": "3 star", "count": 25000 },
+      { "name": "4 star", "count": 60000 },
+      { "name": "5 star", "count": 140000 }
+    ]
+  },
+  {
+    "id": 20,
+    "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800",
+    "title": "Canva",
+    "companyName": "Canva Pty Ltd.",
+    "description": "Canva empowers users to design stunning visuals, from social media posts to professional presentations, with ease. Its drag-and-drop editor and thousands of templates make creativity accessible to everyone. Whether for business or personal use, Canva helps bring ideas to life beautifully.",
+    "size": 190,
+    "reviews": 14500000,
+    "ratingAvg": 4.8,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 10800000 }
+    ]
+  }
+]
