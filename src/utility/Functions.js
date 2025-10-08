@@ -1,0 +1,2 @@
+export const ValueStringifier = (e) => e >= 1000000000 ? `${e/1000000000}B` : e >= 1000000 ? `${e/1000000}M` :e >= 1000 ? `${e/1000}K` : e;
+export const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));

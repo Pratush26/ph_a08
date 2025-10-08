@@ -6,4 +6,5 @@ body{
     font-family: "Inter", sans-serif;
     background-color: rgb(243, 243, 243);
     color: black;
+    min-height: 100vh;
 }

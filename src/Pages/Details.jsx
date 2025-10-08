@@ -1,46 +1,92 @@
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
+import { useState, useEffect } from "react";
 import IconDownload from '../assets/icon-downloads.png'
 import IconRatings from '../assets/icon-ratings.png'
 import IconReviews from '../assets/icon-review.png'
+import AppNotFoundImg from '../assets/App-Error.png'
+import { ValueStringifier, wait } from "../utility/Functions";
+import { AddToInstalledList, findDB } from "../utility/localDb";
 
 export default function AppsDetailsPage() {
     const { id } = useParams()
+    const navigate = useNavigate()
     const { data } = useLoaderData()
     const details = data.find(e => e.id == id)
-    console.log(data.map(e=> e.title))
+    const localData = findDB('installedApps')
+    const [installed, setInstalled] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const handleClick = async (i, n) => {
+        setLoading(true);
+        await wait(3000);
+        setLoading(false);
+        setInstalled(true)
+        AddToInstalledList(i, n)
+    }
+    useEffect(() => {
+        if (localData.includes(parseInt(id))) setInstalled(true)
+    }, [localData, id])
     if (!details) {
-        return <p>App not found</p>
+        return (
+            <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[70vh]'>
+                <img src={AppNotFoundImg} alt="not found" className='h-[40vh] w-auto' />
+                <h1 className='text-4xl font-bold uppercase'>Oops!! app not found!</h1>
+                <p className='text-sm text-gray-600'>The App you are requesting is not found on our system.  please try another apps</p>
+                <button
+                    onClick={() => navigate(-1)}
+                    className="-bg-linear-45 from-purple-500 to-indigo-500 text-white font-semibold px-6 py-2 rounded-sm hover:shadow-md/50 shadow-gray-500 cursor-pointer transition-all duration-300 transition-discrete"
+                >
+                    Go Back!
+                </button>
+            </main>
+        )
     }
     return (
         <main>
             <section className="grid grid-cols-[25%_70%] items-center-safe justify-items-center-safe gap-4 w-11/12 mx-auto my-6 text-gray-800">
-                <img src={details.image} alt={details.title} className="rounded-2xl aspect-square w-11/12 object-cover" />
+                <img src={details.image} alt={details.title} className="rounded-2xl bg-white p-4 shadow-md/50 shadow-gray-400 aspect-square w-11/12 object-cover" />
                 <aside className="w-full space-y-5">
                     <div className="flex w-full items-center justify-between gap-3">
-                        <h1 className="text-4xl font-bold text-black">{details.title}</h1>
+                        <h1 className="text-4xl font-extrabold text-black">{details.title}</h1>
                         <span>
-                        <p className="text-xs text-gray-500">Developed By</p>
-                        <p className="text-sm text-purple-500 font-bold">{details.companyName}</p>
+                            <p className="text-xs text-gray-500">Developed By</p>
+                            <p className="text-sm text-purple-500 font-bold">{details.companyName}</p>
                         </span>
                     </div>
                     <div className="flex items-center justify-around gap-2 text-sm font-medium">
                         <span className="flex flex-col items-center justify-center w-full">
                             <img src={IconReviews} alt="reviews" />
                             <p>Reviews</p>
-                            <p className="font-extrabold text-4xl">{details.reviews >= 1000000000 ? `${details.reviews/1000000000}B` : details.reviews >= 1000000 ? `${details.reviews/1000000}M` : details.reviews >= 1000 ? `${details.reviews/1000}K` : details.reviews}</p>
+                            <p className="font-extrabold text-3xl">{ValueStringifier(details.reviews)}</p>
                         </span>
                         <span className="flex flex-col items-center justify-center border-l-2 border-l-gray-300 w-full">
                             <img src={IconDownload} alt="downloads" />
                             <p>Downloads</p>
-                            <p className="font-extrabold text-4xl">{details.downloads >= 1000000000 ? `${details.downloads/1000000000}B` : details.downloads >= 1000000 ? `${details.downloads/1000000}M` : details.downloads >= 1000 ? `${details.downloads/1000}K` : details.downloads}</p>
+                            <p className="font-extrabold text-3xl">{ValueStringifier(details.downloads)}</p>
                         </span>
                         <span className="flex flex-col items-center justify-center border-l-2 border-l-gray-300 w-full">
                             <img src={IconRatings} alt="ratings" />
                             <p>Average Rating</p>
-                            <p className="font-extrabold text-4xl">{details.ratingAvg}</p>
+                            <p className="font-extrabold text-3xl">{details.ratingAvg}</p>
                         </span>
                     </div>
-                    <button className="-bg-linear-45 from-emerald-700 to-green-400 text-white font-bold px-9 py-3 rounded-sm hover:shadow-md/50 shadow-gray-500 cursor-pointer transition-all duration-300 transition-discrete">Install <span className="font-normal text-sm">({details.size} MB)</span></button>
+                    <button
+                        disabled={installed}
+                        onClick={() => handleClick(details.id, details.title)}
+                        className="-bg-linear-45 from-emerald-700 to-green-400 text-white font-bold px-9 py-3 rounded-sm hover:shadow-md/50 shadow-gray-500 cursor-pointer transition-all duration-300 transition-discrete">
+                        {
+                            loading ? 
+                            <span className="loading loading-bars loading-md"></span> 
+                            :
+                            installed ? (
+                                'Installed'
+                            ) : (
+                                <>
+                                    Install <span className="font-normal text-sm">({details.size} MB)</span>
+                                </>
+                            )
+                        }
+
+                    </button>
                 </aside>
             </section>
             <section className="w-11/12 mx-auto">

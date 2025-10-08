@@ -5,6 +5,7 @@ import HomePage from "../Pages/Home";
 import axios from "axios";
 import AllAppsPage from "../Pages/AllApps";
 import AppsDetailsPage from "../Pages/Details";
+import InstalledAppListPage from "../Pages/InstalledList";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
         {
             path: '/installedlist',
             loader: () => axios('/appData.json'),
-            Component: AllAppsPage
+            Component: InstalledAppListPage
         },
         {
             path: '/details/:id',
