@@ -21,6 +21,7 @@ export default function Footer() {
                         </div>
                     </span>
                 </div>
+                <hr className="border-none h-[1.5px] bg-gray-600"/>
                 <p className="text-sm text-gray-400 text-center">Copyright © 2025 - All right reserved</p>
             </footer>
         </section>

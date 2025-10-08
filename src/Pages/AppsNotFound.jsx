@@ -4,8 +4,8 @@ import AppNotFoundImg from '../assets/App-Error.png'
 export default function AppsNotFound () {
     const navigate = useNavigate()
     return (
-                <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[70vh]'>
-                    <img src={AppNotFoundImg} alt="not found" className='h-[40vh] w-auto' />
+                <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[80vh] text-center'>
+                    <img src={AppNotFoundImg} alt="not found" className='h-auto w-5/6 max-w-sm' />
                     <h1 className='text-4xl font-bold uppercase'>Oops!! app not found!</h1>
                     <p className='text-sm text-gray-600'>The App you are requesting is not found on our system.  please try another apps</p>
                     <button

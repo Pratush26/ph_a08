@@ -24,7 +24,7 @@ export default function AllAppsPage() {
                 <h1 className="text-center text-gray-800 text-3xl font-bold">Our All Applications</h1>
                 <p className="text-center text-gray-500 text-sm font-medium m-2">Explore All Apps on the Market developed by us. We code for Millions</p>
             </div>
-            <section className="w-11/12 mx-auto flex items-center justify-between gap-4">
+            <section className="w-11/12 mx-auto flex items-center justify-between gap-4 min-h-[20vh]">
                 <h2 className="text-lg font-bold">({dataSet.length}) Apps Found</h2>
                 <form action="">
                     <input type="text" defaultValue={typed} onChange={e => setTyped(e.target.value)} placeholder="Type here" className="bg-white input" />
@@ -51,7 +51,9 @@ export default function AllAppsPage() {
                             :
                             dataSet.map(e => (
                                 <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                                    <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                                    <div className="w-full bg-gray-200 p-1 aspect-square rounded-xl flex items-center justify-center">
+                                        <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                                    </div>
                                     <p className="font-semibold w-full">{e.title}</p>
                                     <div className="flex items-center justify-between w-full gap-2">
                                         <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>

@@ -20,7 +20,7 @@ export default function InstalledAppListPage() {
         setDataSet(data.filter(e => findDB('installedApps').includes(parseInt(e.id))));
     };
     return (
-        <main className="min-h-[70vh]">
+        <main className="min-h-[85vh]">
             <div className="flex flex-col items-center justify-center min-h-[40vh]">
                 <h1 className="text-center text-gray-800 text-3xl font-bold">Your Installed Apps</h1>
                 <p className="text-center text-gray-500 text-sm font-medium m-2">Explore All Trending Apps on the Market developed by us</p>

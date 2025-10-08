@@ -4,8 +4,8 @@ import notFound from '../assets/error-404.png'
 export default function ErrorPage() {
     const navigate = useNavigate()
     return (
-        <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[70vh]'>
-            <img src={notFound} alt="not found" className='h-[40vh] w-auto' />
+        <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[80vh] text-center'>
+            <img src={notFound} alt="not found" className='h-auto w-5/6 max-w-sm' />
             <h1 className='text-4xl font-bold'>Oops, page not found!</h1>
             <p className='text-sm text-gray-600'>The page you are looking for is not available.</p>
             <button

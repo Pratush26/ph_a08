@@ -27,18 +27,18 @@ export default function AppsDetailsPage() {
     }, [localData, id])
     if (!details) return <AppsNotFound />;
     return (
-        <main>
-            <section className="grid grid-cols-[25%_70%] items-center-safe justify-items-center-safe gap-4 w-11/12 mx-auto my-6 text-gray-800">
+        <main className="min-h-[85vh] flex flex-col justify-evenly">
+            <section className="grid grid-cols-1 sm:grid-cols-[25%_70%] items-center-safe justify-items-center-safe gap-8 w-11/12 mx-auto my-6 text-gray-800">
                 <img src={details.image} alt={details.title} className="rounded-2xl bg-white p-4 shadow-md/50 shadow-gray-400 aspect-square w-11/12 object-cover" />
                 <aside className="w-full space-y-5">
-                    <div className="flex w-full items-center justify-between gap-3">
+                    <div className="flex flex-wrap w-full items-center justify-between gap-3">
                         <h1 className="text-4xl font-extrabold text-black">{details.title}</h1>
                         <span>
                             <p className="text-xs text-gray-500">Developed By</p>
                             <p className="text-sm text-purple-500 font-bold">{details.companyName}</p>
                         </span>
                     </div>
-                    <div className="flex items-center justify-around gap-2 text-sm font-medium">
+                    <div className="flex items-center justify-around gap-2 text-sm font-medium text-center">
                         <span className="flex flex-col items-center justify-center w-full">
                             <img src={IconReviews} alt="reviews" className="h-7 aspect-square" />
                             <p>Reviews</p>

@@ -8,13 +8,13 @@ import { ValueStringifier } from "../utility/Functions";
 
 export default function HomePage() {
     const { data } = useLoaderData()
-    const {state} = useNavigation()
-    if(state === 'loading') return <div className="flex items-center justify-center min-h-screen"><span className="loading loading-spinner loading-lg"></span></div>
+    const { state } = useNavigation()
+    if (state === 'loading') return <div className="flex items-center justify-center min-h-screen"><span className="loading loading-spinner loading-lg"></span></div>
     return (
         <main>
             <section className="flex flex-col items-center justify-center text-center gap-4 text-gray-700 min-h-[70vh] w-11/12 mx-auto">
                 <h1 className="font-bold text-5xl">We Build</h1>
-                <h2 className="font-bold text-5xl"><span className="bg-gradient-to-l from-purple-500 to-violet-500 bg-clip-text text-transparent font-extrabold text-6xl">Productive</span> Apps</h2>
+                <h2 className="font-bold text-5xl"><span className="bg-gradient-to-l from-purple-500 to-violet-500 bg-clip-text text-transparent font-extrabold text-5xl sm:text-6xl">Productive</span> Apps</h2>
                 <p className="text-gray-500">At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
                 <div className="flex gap-3">
                     <a href="https://play.google.com/store/search?q=programming+hero&c=apps&hl=en_US" target="_blank" className="px-6 py-3 rounded-sm bg-white text-sm font-semibold flex items-center justify-between gap-2 hover:bg-gray-50 hover:shadow-md/50 shadow-gray-400 transition-all duration-300 transition-discrete"><img src={GooglePlay} alt="google play store" className="h-5 w-auto" /> Google Play</a>
@@ -24,7 +24,7 @@ export default function HomePage() {
             <img src={HeroImg} alt="app" className="mx-auto w-auto" />
             <section className="-bg-linear-45 from-purple-600 to-indigo-600 px-4 py-10 mb-8">
                 <h3 className="text-white text-4xl font-bold text-center mx-2 my-6">Trusted by Millions, Built for You</h3>
-                <div className="flex items-center justify-evenly gap-4 w-5/6 mx-auto my-6 text-sm text-gray-300 text-center">
+                <div className="flex flex-wrap items-center justify-evenly gap-4 w-5/6 mx-auto my-6 text-sm text-gray-300 text-center">
                     <span>
                         <p>Total Downloads</p>
                         <p className="font-extrabold text-5xl text-white my-2">29.6M</p>
@@ -47,7 +47,9 @@ export default function HomePage() {
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto my-6">
                 {data.sort((a, b) => b.downloads - a.downloads).slice(0, 8).map(e => (
                     <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                        <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                        <div className="w-full bg-gray-200 p-1 aspect-square rounded-xl flex items-center justify-center">
+                            <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                        </div>
                         <p className="font-semibold w-full">{e.title}</p>
                         <div className="flex items-center justify-between w-full gap-2">
                             <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>
