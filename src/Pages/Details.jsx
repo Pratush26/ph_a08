@@ -17,7 +17,7 @@ export default function AppsDetailsPage() {
     const [loading, setLoading] = useState(false)
     const handleClick = async (i, n) => {
         setLoading(true);
-        await wait(3000);
+        await wait(2000);
         setLoading(false);
         setInstalled(true)
         AddToInstalledList(i, n)

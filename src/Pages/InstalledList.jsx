@@ -14,7 +14,7 @@ export default function InstalledAppListPage() {
     }
     const handleClick = async (i, n, setLoading) => {
         setLoading(true);
-        await wait(3000);
+        await wait(2000);
         setLoading(false);
         AddToInstalledList(i, n);
         setDataSet(data.filter(e => findDB('installedApps').includes(parseInt(e.id))));
