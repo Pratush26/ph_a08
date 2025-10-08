@@ -8,8 +8,8 @@ export default function InstalledAppListPage() {
     const { data } = useLoaderData()
     const [dataSet, setDataSet] = useState(data.filter(e => findDB('installedApps').includes(parseInt(e.id))))
     const handleSort = (val) => {
-        if(val === 'Size') setDataSet(prev => [...prev].sort((a, b) => b.size - a.size))
-        else if(val === 'Download (Low to High)') setDataSet(prev => [...prev].sort((a, b) => a.downloads - b.downloads))
+        if (val === 'Size') setDataSet(prev => [...prev].sort((a, b) => b.size - a.size))
+        else if (val === 'Download (Low to High)') setDataSet(prev => [...prev].sort((a, b) => a.downloads - b.downloads))
         else setDataSet(prev => [...prev].sort((a, b) => b.downloads - a.downloads))
     }
     const handleClick = async (i, n, setLoading) => {
@@ -35,7 +35,14 @@ export default function InstalledAppListPage() {
                         <option>Download (Low to High)</option>
                     </select>
                 </div>
-                {dataSet.map(e => (<InstalledListCard e={e} key={e.id} handleClick={handleClick} />))}
+                {
+                    dataSet.length === 0 ?
+                        <div className="flex items-center justify-center min-h-[30vh]">
+                            <h4 className="text-3xl font-bold">No apps Found!</h4>
+                        </div>
+                        :
+                        dataSet.map(e => (<InstalledListCard e={e} key={e.id} handleClick={handleClick} />))
+                }
             </section>
         </main>
     )

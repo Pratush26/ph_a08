@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigation } from "react-router";
 import HeroImg from '../assets/hero.png'
 import GooglePlay from '../assets/google-play.svg';
 import AppStore from '../assets/app-store.svg'
@@ -8,6 +8,8 @@ import { ValueStringifier } from "../utility/Functions";
 
 export default function HomePage() {
     const { data } = useLoaderData()
+    const {state} = useNavigation()
+    if(state === 'loading') return <div className="flex items-center justify-center min-h-screen"><span className="loading loading-spinner loading-lg"></span></div>
     return (
         <main>
             <section className="flex flex-col items-center justify-center text-center gap-4 text-gray-700 min-h-[70vh] w-11/12 mx-auto">

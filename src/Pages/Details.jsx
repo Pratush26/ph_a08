@@ -1,16 +1,15 @@
-import { useLoaderData, useNavigate, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import { useState, useEffect } from "react";
 import IconDownload from '../assets/icon-downloads.png'
 import IconRatings from '../assets/icon-ratings.png'
 import IconReviews from '../assets/icon-review.png'
-import AppNotFoundImg from '../assets/App-Error.png'
 import { ValueStringifier, wait } from "../utility/Functions";
 import { AddToInstalledList, findDB } from "../utility/localDb";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import AppsNotFound from "./AppsNotFound";
 
 export default function AppsDetailsPage() {
     const { id } = useParams()
-    const navigate = useNavigate()
     const { data } = useLoaderData()
     const details = data.find(e => e.id == id)
     const localData = findDB('installedApps')
@@ -26,21 +25,7 @@ export default function AppsDetailsPage() {
     useEffect(() => {
         if (localData.includes(parseInt(id))) setInstalled(true)
     }, [localData, id])
-    if (!details) {
-        return (
-            <main className='flex flex-col items-center justify-center gap-2 m-4 min-h-[70vh]'>
-                <img src={AppNotFoundImg} alt="not found" className='h-[40vh] w-auto' />
-                <h1 className='text-4xl font-bold uppercase'>Oops!! app not found!</h1>
-                <p className='text-sm text-gray-600'>The App you are requesting is not found on our system.  please try another apps</p>
-                <button
-                    onClick={() => navigate(-1)}
-                    className="-bg-linear-45 from-purple-500 to-indigo-500 text-white font-semibold px-6 py-2 rounded-sm hover:shadow-md/50 shadow-gray-500 cursor-pointer transition-all duration-300 transition-discrete"
-                >
-                    Go Back!
-                </button>
-            </main>
-        )
-    }
+    if (!details) return <AppsNotFound />;
     return (
         <main>
             <section className="grid grid-cols-[25%_70%] items-center-safe justify-items-center-safe gap-4 w-11/12 mx-auto my-6 text-gray-800">
