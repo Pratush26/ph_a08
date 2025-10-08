@@ -1,3 +1,16 @@
+# PH Store
+This is a application store from where user can download applications, see trending apps and view their installed apps.   
+
+### Used Technologies:
+- Vite React
+- React Router
+- React Toastify
+- Tailwind Css
+- Daisyui
+- React Icons
+- Axios
+- Recharts
+---
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

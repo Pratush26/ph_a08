@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     path: "/",
     Component: App,
     errorElement: <ErrorPage />,
-    hydrateFallbackElement: <ErrorPage />,
+    hydrateFallbackElement: <span class="loading loading-dots loading-lg min-h-screen flex items-center justify-center"></span>,
     children:[
         {
             index:true,
