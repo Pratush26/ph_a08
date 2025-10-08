@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, Link } from "react-router";
 import IconDownload from '../assets/icon-downloads.png';
 import IconRatings from '../assets/icon-ratings.png';
 
@@ -16,16 +16,16 @@ export default function AllAppsPage() {
                     <input type="text" name="" id="" />
                 </form>
             </section>
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 mx-auto my-6">
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto my-6">
                 {data.map(e => (
-                    <div key={e.id} className="flex flex-col justify-between p-4 border gap-2 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                        <img src={e.image} alt={e.title} className="rounded-xl" />
-                        <p className="font-semibold">{e.title}</p>
-                        <div className="flex items-center justify-between gap-2">
+                    <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
+                        <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                        <p className="font-semibold w-full">{e.title}</p>
+                        <div className="flex items-center justify-between w-full gap-2">
                             <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {e.downloads}</span>
                             <span className="rounded px-2 py-1 bg-amber-100 flex items-center justify-between gap-2 text-xs w-fit text-amber-600 font-semibold"><img src={IconRatings} alt="ratings" className="h-3 w-auto" /> {e.ratingAvg}</span>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </section>
         </main>

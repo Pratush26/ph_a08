@@ -4,12 +4,14 @@ import ErrorPage from "../Pages/ErrorPage";
 import HomePage from "../Pages/Home";
 import axios from "axios";
 import AllAppsPage from "../Pages/AllApps";
+import AppsDetailsPage from "../Pages/Details";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
     errorElement: <ErrorPage />,
+    hydrateFallbackElement: <ErrorPage />,
     children:[
         {
             index:true,
@@ -25,6 +27,11 @@ export const router = createBrowserRouter([
             path: '/installedlist',
             loader: () => axios('/appData.json'),
             Component: AllAppsPage
+        },
+        {
+            path: '/details/:id',
+            loader: () => axios('/appData.json'),
+            Component: AppsDetailsPage
         },
         {
             path: '*',
