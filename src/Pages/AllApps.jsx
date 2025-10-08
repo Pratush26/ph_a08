@@ -8,11 +8,16 @@ export default function AllAppsPage() {
     const { data } = useLoaderData()
     const [dataSet, setDataSet] = useState(data)
     const [typed, setTyped] = useState('')
+    const [loading, setLoading] = useState(false)
     const trimmed = typed.trim().toLowerCase()
     useEffect(() => {
-        if (trimmed) setDataSet(data.filter(e => e.title.trim().toLowerCase().includes(trimmed)))
-        else setDataSet(data)
-    }, [trimmed, data])
+        setLoading(true);
+        setTimeout(() => {
+            if (trimmed) setDataSet(data.filter(e => e.title.trim().toLowerCase().includes(trimmed)));
+            else setDataSet(data);
+            setLoading(false);
+        }, 200);
+    }, [trimmed, data]);
     return (
         <main>
             <div className="flex flex-col items-center justify-center min-h-[40vh]">
@@ -32,16 +37,28 @@ export default function AllAppsPage() {
                 :
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto my-6">
                     {
-                        dataSet.map(e => (
-                            <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                                <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
-                                <p className="font-semibold w-full">{e.title}</p>
-                                <div className="flex items-center justify-between w-full gap-2">
-                                    <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>
-                                    <span className="rounded px-2 py-1 bg-amber-100 flex items-center justify-between gap-2 text-xs w-fit text-amber-600 font-semibold"><img src={IconRatings} alt="ratings" className="h-3 w-auto" /> {e.ratingAvg}</span>
-                                </div>
-                            </Link>
-                        ))}
+                        loading ?
+                            <>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                            </>
+                            :
+                            dataSet.map(e => (
+                                <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
+                                    <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
+                                    <p className="font-semibold w-full">{e.title}</p>
+                                    <div className="flex items-center justify-between w-full gap-2">
+                                        <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>
+                                        <span className="rounded px-2 py-1 bg-amber-100 flex items-center justify-between gap-2 text-xs w-fit text-amber-600 font-semibold"><img src={IconRatings} alt="ratings" className="h-3 w-auto" /> {e.ratingAvg}</span>
+                                    </div>
+                                </Link>
+                            ))}
                 </section>
             }
         </main>
