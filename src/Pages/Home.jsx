@@ -5,6 +5,7 @@ import AppStore from '../assets/app-store.svg'
 import IconDownload from '../assets/icon-downloads.png';
 import IconRatings from '../assets/icon-ratings.png';
 import { ValueStringifier } from "../utility/Functions";
+import AppsCard from "../Components/AppsCard";
 
 export default function HomePage() {
     const { data } = useLoaderData()
@@ -45,21 +46,9 @@ export default function HomePage() {
             <h3 className="text-center text-gray-800 text-3xl font-bold">Trending Apps</h3>
             <p className="text-center text-gray-500 text-sm font-medium m-2">Explore All Trending Apps on the Market developed by us</p>
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-11/12 mx-auto my-6">
-                {data.sort((a, b) => b.downloads - a.downloads).slice(0, 8).map(e => (
-                    <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                        <div className="w-full bg-gray-200 p-1 aspect-square rounded-xl flex items-center justify-center">
-                            <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
-                        </div>
-                        <p className="font-semibold w-full">{e.title}</p>
-                        <div className="flex items-center justify-between w-full gap-2">
-                            <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>
-                            <span className="rounded px-2 py-1 bg-amber-100 flex items-center justify-between gap-2 text-xs w-fit text-amber-600 font-semibold"><img src={IconRatings} alt="ratings" className="h-3 w-auto" /> {e.ratingAvg}</span>
-                        </div>
-                    </Link>
-                ))}
+                {data.map(e => <AppsCard key={e._id} e={e} />)}
             </section>
-            <Link to='/allapps'
-                className="-bg-linear-45 from-purple-500 to-indigo-500 w-fit text-sm font-semibold mx-auto flex items-center justify-between gap-2 text-white px-4 py-2 rounded-sm hover:shadow-md/50 shadow-gray-500 transition-all duration-300 transition-discrete">
+            <Link to='/allapps' className="-bg-linear-45 from-purple-500 to-indigo-500 w-fit text-sm font-semibold mx-auto flex items-center justify-between gap-2 text-white px-4 py-2 rounded-sm hover:shadow-md/50 shadow-gray-500 transition-all duration-300 transition-discrete">
                 Show All
             </Link>
         </main>

@@ -3,21 +3,21 @@ import IconDownload from '../assets/icon-downloads.png';
 import IconRatings from '../assets/icon-ratings.png';
 import { ValueStringifier } from "../utility/Functions";
 import { useEffect, useState } from "react";
+import AppsCard from "../Components/AppsCard";
+import axios from "axios";
 
 export default function AllAppsPage() {
-    const { data } = useLoaderData()
-    const [dataSet, setDataSet] = useState(data)
-    const [typed, setTyped] = useState('')
+    const [data, setData] = useState([])
+    const [limit, setLimit] = useState(12)
+    const [skip, setSkip] = useState(0)
+    const [typed, setTyped] = useState("")
     const [loading, setLoading] = useState(false)
-    const trimmed = typed.trim().toLowerCase()
     useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            if (trimmed) setDataSet(data.filter(e => e.title.trim().toLowerCase().includes(trimmed)));
-            else setDataSet(data);
-            setLoading(false);
-        }, 200);
-    }, [trimmed, data]);
+      axios(`${import.meta.env.VITE_SERVER}/apps-card?search=${typed}&limit=${limit}&skip=${skip}`).then(res => {
+        setData(res.data)
+        setLoading(false)
+      }).catch(err => console.error(err))
+    }, [typed, limit, skip])
     return (
         <main>
             <div className="flex flex-col items-center justify-center min-h-[40vh]">
@@ -25,12 +25,12 @@ export default function AllAppsPage() {
                 <p className="text-center text-gray-500 text-sm font-medium m-2">Explore All Apps on the Market developed by us. We code for Millions</p>
             </div>
             <section className="w-11/12 mx-auto flex items-center justify-between gap-4 min-h-[20vh]">
-                <h2 className="text-lg font-bold">({dataSet.length}) Apps Found</h2>
+                <h2 className="text-lg font-bold">({data.length}) Apps Found</h2>
                 <form action="">
                     <input type="text" defaultValue={typed} onChange={e => setTyped(e.target.value)} placeholder="Type here" className="bg-white input" />
                 </form>
             </section>
-            {dataSet.length === 0 ?
+            {data.length === 0 ?
                 <div className="flex items-center justify-center min-h-[30vh]">
                     <h4 className="text-3xl font-bold">No apps Found!</h4>
                 </div>
@@ -39,28 +39,12 @@ export default function AllAppsPage() {
                     {
                         loading ?
                             <>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
-                                <div className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                {[...Array(8)].map((_, index) => (
+                                    <div key={index} className="w-full h-70 animate-pulse bg-gray-300 rounded-xl"></div>
+                                ))}
                             </>
                             :
-                            dataSet.map(e => (
-                                <Link to={`/details/${e.id}`} key={e.id} className="flex flex-col items-center justify-between p-6 border gap-4 border-gray-300 shadow-md/50 shadow-gray-400 rounded-2xl">
-                                    <div className="w-full bg-gray-200 p-1 aspect-square rounded-xl flex items-center justify-center">
-                                        <img src={e.image} alt={e.title} className="rounded-xl w-2/3 aspect-square" />
-                                    </div>
-                                    <p className="font-semibold w-full">{e.title}</p>
-                                    <div className="flex items-center justify-between w-full gap-2">
-                                        <span className="rounded px-2 py-1 bg-green-100 flex items-center justify-between gap-2 text-xs w-fit text-green-600 font-semibold"><img src={IconDownload} alt="ratings" className="h-3 w-auto" /> {ValueStringifier(e.downloads)}</span>
-                                        <span className="rounded px-2 py-1 bg-amber-100 flex items-center justify-between gap-2 text-xs w-fit text-amber-600 font-semibold"><img src={IconRatings} alt="ratings" className="h-3 w-auto" /> {e.ratingAvg}</span>
-                                    </div>
-                                </Link>
-                            ))}
+                            data.map(e => <AppsCard key={e._id} e={e} />)}
                 </section>
             }
         </main>

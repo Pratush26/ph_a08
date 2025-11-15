@@ -16,12 +16,12 @@ export const router = createBrowserRouter([
     children:[
         {
             index:true,
-            loader: () => axios('/appData.json'),
+            loader: () => axios(`${import.meta.env.VITE_SERVER}/apps-card?limit=8`),
             Component: HomePage
         },
         {
             path: '/allapps',
-            loader: () => axios('/appData.json'),
+            loader: () => axios(`${import.meta.env.VITE_SERVER}/apps-card?limit=12`),
             Component: AllAppsPage
         },
         {
